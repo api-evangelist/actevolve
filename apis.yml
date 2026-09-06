@@ -1,23 +1,124 @@
 aid: actevolve
-name: Actevolve
-description: 'Actevolve is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: ActEvolve
+description: >-
+  ActEvolve Inc. (株式会社ActEvolve) was a Tokyo virtual-reality entertainment company
+  incorporated on 9 August 2017 by Takuya Kato, a former Capcom game developer, together
+  with other ex-game-industry engineers. In November 2018 it launched VARK, a VR live
+  platform on which VTuber and virtual-artist performances — most visibly the long-running
+  "Cinderella switch" series with hololive — were staged as ticketed, seat-based concerts
+  for Meta Quest, Android and iOS, paid for with in-app VARK Coin. The company took
+  strategic investment from KLab Inc. in August 2019, renamed itself VARK Inc.
+  (株式会社VARK) on 1 May 2020 alongside a roughly ¥200M round from ANRI, raised a further
+  ¥600M in May 2021, and diversified into the VARK SHORTS 3D animation tool and the STAR
+  BLOOM liver-management agency, producing metaverse events for ANYCOLOR, Avex, KADOKAWA,
+  COVER, Dwango, Shochiku and Meta. VARK was a consumer entertainment app rather than a
+  platform business: it never operated a developer program, and no public API, SDK, webhook
+  catalogue or machine-readable specification (OpenAPI, AsyncAPI, GraphQL SDL, MCP manifest,
+  agent card) was published on any of its hosts at any point — 1,812 archived URLs across
+  vark.co.jp and its subdomains contain no /api, /developers, /docs, /openapi or /graphql
+  path of any kind. The VARK metaverse service shut down on 4 March 2024 with same-day
+  notice, refunding unused VARK Coin until 5 May 2024 under Japan's Payment Services Act;
+  the free tier of VARK SHORTS ended on 30 September 2024; and in March 2025 the entire
+  company was sold in an all-share transaction whose acquirer and terms were kept
+  confidential, with founder Takuya Kato stepping down as representative director. This
+  profile is retained as a historical record — there is no API surface to enrich.
 url: https://raw.githubusercontent.com/api-evangelist/actevolve/refs/heads/main/apis.yml
+image: https://web.archive.org/web/20250209054433id_/https://corp.vark.co.jp/wp-content/themes/vark/assets/images/common/logo.svg
+x-image-note: >-
+  The company logo is served only from the Wayback Machine's 2025-02-09 capture of the
+  now-offline corporate site; the live origin publishes no address record. Verified
+  2026-09-06: HTTP 200, image/svg+xml, 32,782 bytes.
 x-type: company
 x-source: harvest:secondary-market
+x-harvest-source-url: https://equityzen.com/company/actevolve/
 x-tier: stub
-x-tier-reason: harvest
+x-tier-reason: defunct-no-api-surface
+x-status: defunct
+x-founded: '2017-08-09'
+x-renamed:
+  date: '2020-05-01'
+  from: 株式会社ActEvolve (ActEvolve Inc.)
+  to: 株式会社VARK (VARK Inc.)
+  source: https://corp.vark.co.jp/company
+x-shutdown-date: '2024-03-04'
+x-shutdown-note: >-
+  The VARK entertainment-metaverse service was announced and terminated the same day,
+  4 March 2024, with unused VARK Coin refundable until 5 May 2024 under Japan's Payment
+  Services Act. VARK SHORTS lost its free tier on 30 September 2024. In March 2025 all
+  shares in the company were transferred to an undisclosed buyer and the founder stepped
+  down; the surviving entity says it will pursue new service development and consulting.
+x-domain-status: offline
+x-domain-note: >-
+  vark.co.jp is still registered to 株式会社VARK at JPRS (created 2018-09-10, Connected
+  through 2026-09-30, record last updated 2025-10-17) and actevolve.com is still
+  registered via GoDaddy on Route 53 name servers (created 2017-05-31, expiring
+  2027-05-31), but neither zone publishes an A, AAAA or CNAME record for any web
+  hostname — authoritative queries return NOERROR/NODATA and curl exits 6 on every
+  request. The vark.co.jp SOA serial decodes to 2025-03-06, the month the sale closed,
+  and the only surviving record is an MX pointing at Google Workspace. corp.vark.co.jp
+  (the corporate site) was last captured by the Wayback Machine on 2025-02-09. No host
+  is wired as a Website pointer because none of them serves anything, and the EquityZen
+  page this company was harvested from is a trading venue's listing, not a company web
+  presence (roadmap#56).
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- Defunct
+- Acquired
+- Virtual Reality
+- Metaverse
+- Entertainment
+- Live Events
+- VTuber
+- Consumer
+- Japan
+tags_raw:
+- Company
+- Defunct
+- Acquired
+- Virtual Reality
+- Metaverse
+- Entertainment
+- Live Events
+- VTuber
+- Consumer
+- Japan
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-common:
-- type: Website
-  url: https://equityzen.com/company/actevolve
+common: []
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    ActEvolve/VARK shut its VR platform down on 4 March 2024 and was sold outright in
+    March 2025; vark.co.jp, corp.vark.co.jp and actevolve.com are all still registered to
+    the company but publish no A/AAAA/CNAME record, so curl exits 6 ("could not resolve
+    host") before any HTTP request can be made, and 1,812 archived URLs from when the
+    sites were live contain no /api, /developers or specification path of any kind.
+  evidence:
+  - url: https://vark.co.jp/
+    status: 0
+  - url: https://corp.vark.co.jp/company
+    status: 0
+  - url: https://actevolve.com/
+    status: 0
+  - url: https://play.google.com/store/apps/details?id=jp.actevolve.vrpf_sp
+    status: 404
+  - url: https://pypi.org/pypi/actevolve/json
+    status: 404
+  - url: https://registry.npmjs.org/-/v1/search?text=actevolve
+    status: 200
+  - url: https://equityzen.com/company/actevolve/
+    status: 200
+  checked: '2026-09-06'
+x-enrichment:
+  date: '2026-09-06'
+  status: nochange
+  artifacts_added: 1
+  pass: local-v3

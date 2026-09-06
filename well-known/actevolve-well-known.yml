@@ -1,0 +1,203 @@
+generated: '2026-09-06'
+method: probed
+source: https://vark.co.jp/
+name: ActEvolve / VARK well-known + contract discovery probe
+description: >-
+  Negative probe record for ActEvolve Inc. (株式会社ActEvolve), which renamed itself
+  VARK Inc. (株式会社VARK) on 2020-05-01. The company's entertainment-VR platform
+  "VARK" was shut down on 2024-03-04 and the whole company was sold in an
+  undisclosed all-share transaction completed in March 2025. Every host the company
+  ever used — vark.co.jp (the service), corp.vark.co.jp (the corporate site) and
+  actevolve.com (the original brand domain) — has been switched off at DNS: the
+  zones still exist and the registrations are still in the company's name, but no
+  A/AAAA/CNAME record is published for any web hostname, so no HTTP request can be
+  made against them at all. Nothing is emitted from this probe: no WellKnown, no
+  SecurityTxt, no LLMsTxt, no AgentCard, no MCPServer, no OpenAPI pointer, and none
+  should ever be emitted from it in a later round.
+
+host_status:
+- host: vark.co.jp
+  controlled_by_provider: true
+  disposition: dns-parked-no-web-records
+  registrant_organization: 株式会社VARK (Kabusikikaisha VARK)
+  registry: JPRS
+  domain_created: '2018-09-10'
+  registry_state: Connected (2026/09/30)
+  registry_last_updated: '2025-10-17'
+  nameservers: [01.dnsv.jp, 02.dnsv.jp, 03.dnsv.jp, 04.dnsv.jp]
+  records_published:
+    a: none
+    aaaa: none
+    cname: none
+    mx: 1 smtp.google.com
+  soa_serial: 1741229672
+  note: >-
+    Authoritative NOERROR/NODATA for A at 01.dnsv.jp — the zone is alive and mail is
+    still routed to Google Workspace, but every web record has been removed. The SOA
+    serial 1741229672 read as epoch seconds is 2025-03-06 02:54:32 UTC — the zone was
+    last rewritten in the same month the acquisition closed. curl exits 6 ("could not
+    resolve host") on every https:// request.
+- host: corp.vark.co.jp
+  controlled_by_provider: true
+  disposition: dns-removed
+  records_published: {a: none, aaaa: none, cname: none}
+  note: >-
+    Former corporate site (会社概要 / news / recruit). Last Wayback capture
+    2025-02-09. No address record is published today.
+- host: actevolve.com
+  controlled_by_provider: true
+  disposition: dns-parked-no-web-records
+  registrar: GoDaddy.com, LLC
+  domain_created: '2017-05-31'
+  registry_expiry: '2027-05-31'
+  nameservers:
+  - ns-417.awsdns-52.com
+  - ns-470.awsdns-58.com
+  - ns-1112.awsdns-11.org
+  - ns-1405.awsdns-47.org
+  - ns-1626.awsdns-11.co.uk
+  - ns-1870.awsdns-41.co.uk
+  note: >-
+    Original brand domain, registered three months before the company was
+    incorporated (2017-08-09). Delegated to Route 53 but the zone publishes no A
+    record, and web.archive.org holds no capture of it at any time.
+
+hosts:
+- host: vark.co.jp
+  reachable: false
+  documents:
+  - {path: /.well-known/security.txt, status: null, file: null}
+  - {path: /.well-known/openid-configuration, status: null, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: null, file: null}
+  - {path: /.well-known/oauth-protected-resource, status: null, file: null}
+  - {path: /.well-known/api-catalog, status: null, file: null}
+  - {path: /.well-known/ai-plugin.json, status: null, file: null}
+  - {path: /.well-known/agent-card.json, status: null, file: null}
+  - {path: /.well-known/agent.json, status: null, file: null}
+  note: >-
+    status null = the request could not be made. DNS publishes no address record for
+    this host, so there is no origin to return a code. Historical Wayback captures
+    from 2023-07-17 record 404 on /.well-known/security.txt,
+    /.well-known/openid-configuration and /.well-known/ai-plugin.json, so these paths
+    were already absent while the service was live.
+- host: www.vark.co.jp
+  reachable: false
+  documents:
+  - {path: /.well-known/security.txt, status: null, file: null}
+  - {path: /.well-known/openid-configuration, status: null, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: null, file: null}
+  - {path: /.well-known/api-catalog, status: null, file: null}
+  - {path: /.well-known/ai-plugin.json, status: null, file: null}
+  - {path: /.well-known/agent-card.json, status: null, file: null}
+  - {path: /.well-known/agent.json, status: null, file: null}
+- host: corp.vark.co.jp
+  reachable: false
+  documents:
+  - {path: /.well-known/security.txt, status: null, file: null}
+  - {path: /.well-known/openid-configuration, status: null, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: null, file: null}
+  - {path: /.well-known/api-catalog, status: null, file: null}
+  - {path: /.well-known/ai-plugin.json, status: null, file: null}
+  - {path: /.well-known/agent-card.json, status: null, file: null}
+  - {path: /.well-known/agent.json, status: null, file: null}
+  note: >-
+    Wayback captures from 2023 record HTTP 404 on /.well-known/security.txt,
+    /.well-known/openid-configuration, /.well-known/ai-plugin.json,
+    /.well-known/nodeinfo, /.well-known/gpc.json, /.well-known/dnt-policy.txt,
+    /.well-known/trust.txt, /ads.txt and /app-ads.txt against this host while it was
+    live — a recorded absence, not an unprobed gap.
+- host: actevolve.com
+  reachable: false
+  documents:
+  - {path: /.well-known/security.txt, status: null, file: null}
+  - {path: /.well-known/openid-configuration, status: null, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: null, file: null}
+  - {path: /.well-known/api-catalog, status: null, file: null}
+  - {path: /.well-known/ai-plugin.json, status: null, file: null}
+  - {path: /.well-known/agent-card.json, status: null, file: null}
+  - {path: /.well-known/agent.json, status: null, file: null}
+
+contract_discovery:
+  probed: '2026-09-06'
+  api_hosts_resolved:
+  - {host: vark.co.jp, dns: NODATA, status: null}
+  - {host: www.vark.co.jp, dns: NODATA, status: null}
+  - {host: corp.vark.co.jp, dns: NODATA, status: null}
+  - {host: api.vark.co.jp, dns: NODATA, status: null}
+  - {host: docs.vark.co.jp, dns: NODATA, status: null}
+  - {host: developer.vark.co.jp, dns: NODATA, status: null}
+  - {host: actevolve.com, dns: NODATA, status: null}
+  - {host: actevolve.co.jp, dns: NXDOMAIN, status: null}
+  openapi:
+  - {url: 'https://vark.co.jp/openapi.json', status: null, result: unreachable}
+  - {url: 'https://vark.co.jp/swagger.json', status: null, result: unreachable}
+  - {url: 'https://corp.vark.co.jp/openapi.json', status: null, result: unreachable}
+  - {url: 'https://actevolve.com/openapi.json', status: null, result: unreachable}
+  graphql: []
+  mcp: []
+  a2a_agent_card: []
+  wsdl: []
+  grpc: []
+  ogc: []
+  archive_evidence:
+    method: wayback-cdx
+    url: http://web.archive.org/cdx/search/cdx?url=vark.co.jp*&fl=original,statuscode&collapse=urlkey&limit=3000
+    status: 200
+    unique_urls_returned: 1812
+    finding: >-
+      1,812 distinct archived URLs across vark.co.jp and its subdomains contain NO
+      /api/, /developers/, /docs/, /openapi, /swagger, /graphql or SDK path of any
+      kind. The only /.well-known/* captures are third-party crawler probes that all
+      returned 404. ActEvolve/VARK never published a developer program, so there is
+      no historical contract to recover either.
+
+other_surfaces:
+- what: GitHub organization
+  url: https://api.github.com/orgs/ActEvolve
+  status: 200
+  result: unconfirmed
+  note: >-
+    An organization named "ActEvolve" exists (created 2018-04-16, last touched
+    2025-02-24) and holds exactly ONE public repository — ActEvolve/msgpax, an
+    untouched fork of lexmag/msgpax (Elixir MessagePack), with zero commits by anyone
+    at the company. The org sets no blog, location, email, description or public
+    members, so nothing on it or on the company's own (now offline) sites links the
+    two. Name and creation date fit, but that is not proof of ownership, and the org
+    publishes no first-party software either way. Deliberately NOT wired as a
+    GitHubOrganization pointer — see STEP 0c.
+- what: GitHub organization (name collision)
+  url: https://api.github.com/orgs/vark
+  status: 200
+  result: miss
+  note: Created 2010-11-23, seven years before the company existed. Unrelated.
+- what: npm registry search "actevolve"
+  url: https://registry.npmjs.org/-/v1/search?text=actevolve
+  status: 200
+  result: miss
+  note: total 0. No first-party npm packages.
+- what: PyPI
+  url: https://pypi.org/pypi/actevolve/json
+  status: 404
+  result: miss
+- what: Google Play listing for the VARK app
+  url: https://play.google.com/store/apps/details?id=jp.actevolve.vrpf_sp
+  status: 404
+  result: gone
+  note: >-
+    The Android build (bundle id jp.actevolve.vrpf_sp, still carrying the pre-rename
+    ActEvolve namespace) has been delisted following the 2024-03-04 shutdown.
+- what: EquityZen secondary-market listing (the harvest source)
+  url: https://equityzen.com/company/actevolve/
+  status: 200
+  result: venue-listing
+  note: >-
+    A trading venue's page about the company, not a company web presence. Not wired
+    as a Website pointer (roadmap#56).
+
+conclusion: >-
+  ActEvolve / VARK Inc. published no API, no SDK, no webhook or event surface and no
+  machine-readable specification at any point in its life, and today it has no
+  reachable host at all. This file is a historical record of an honest zero, not a
+  thin profile. A future round should read host_status before probing these hosts
+  again — they cannot be reached, and a 200 from any of them would mean the domain
+  changed hands.
